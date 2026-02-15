@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/**/*.js", "use": "@vercel/node" },
+    { "src": "index.html", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/oauth/callback", "dest": "/api/oauth-callback.js" },
+    { "src": "/api/(.*)", "dest": "/api/$1.js" }
+  ]
+}
